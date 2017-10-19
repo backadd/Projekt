@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Repositories
 {
-    class Member : IRepository<Member, int>
+    class MemberRepository : IRepository<Member, int>
     {
 
         LibraryContext _context;
@@ -19,27 +19,29 @@ namespace Library.Repositories
 
         public void Add(Member item)
         {
-            throw new NotImplementedException();
+            _context.Members.Add(item);
         }
 
         public IEnumerable<Member> All()
         {
-            throw new NotImplementedException();
+            return _context.Members.ToList();
         }
 
         public void Edit(Member item)
         {
-            throw new NotImplementedException();
+            Member MemberToDelete = Find(item.Id);
+            Remove(MemberToDelete);
+            Add(item);
         }
 
         public Member Find(int id)
         {
-            throw new NotImplementedException();
+            return _context.Members.Single(b => b.Id == id);
         }
 
         public void Remove(Member item)
         {
-            throw new NotImplementedException();
+            _context.Members.Remove(item);
         }
     }
 }
