@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Repositories
 {
-    class AuthorRepository : IRepository<Book, int>
+    class AuthorRepository : IRepository<Author, int>
     {
         LibraryContext _context;
 
@@ -16,29 +16,31 @@ namespace Library.Repositories
             _context = ctx;
         }
 
-        public void Add(Book item)
+        public void Add(Author item)
         {
-            _context.Books.Add(item);
+            _context.Authors.Add(item);
         }
 
-        public IEnumerable<Book> All()
+        public IEnumerable<Author> All()
         {
-            throw new NotImplementedException();
+            return _context.Authors.ToList();
         }
 
-        public void Edit(Book item)
+        public void Edit(Author item)
         {
-            throw new NotImplementedException();
+            Author AuthorToDelete = Find(item.Id);
+            Remove(AuthorToDelete);
+            Add(item);
         }
 
-        public Book Find(int id)
+        public Author Find(int id)
         {
-            throw new NotImplementedException();
+            return _context.Authors.Single(b => b.Id == id);
         }
 
-        public void Remove(Book item)
+        public void Remove(Author item)
         {
-            throw new NotImplementedException();
+            _context.Authors.Remove(item);
         }
     }
 }
