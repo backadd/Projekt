@@ -18,7 +18,7 @@ namespace Library.Repositories
 
         public void Add(Book item)
         {
-            throw new NotImplementedException();
+            _context.Books.Add(item);
         }
 
         public IEnumerable<Book> All()
