@@ -8,23 +8,22 @@ using System.Threading.Tasks;
 
 namespace Library.Services
 {
-    class AuthorService : IService
+    class LoanService : IService
     {
 
-        AuthorRepository _authorRepository;
+        LoanRepository _loanRepository;
 
-        public AuthorService(RepositoryFactory repoFactory)
+        public LoanService(RepositoryFactory repoFactory)
         {
-            _authorRepository = repoFactory.GetAuthorRepository();
+            _loanRepository = repoFactory.GetLoanRepository();
         }
-
 
         public event EventHandler Updated;
 
-
-        public IEnumerable<Author> All()
+        public IEnumerable<Loan> All()
         {
-            return _authorRepository.All();
+            return _loanRepository.All();
         }
+
     }
 }
