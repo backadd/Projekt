@@ -5,7 +5,7 @@ using System.Web;
 using Library.Models;
 
 namespace Library.Repositories {
-    public class BookRepository {
+    public class BookRepository : IRepository<Book, int> {
         LibraryContext _context;
 
         public BookRepository(LibraryContext ctx) {
