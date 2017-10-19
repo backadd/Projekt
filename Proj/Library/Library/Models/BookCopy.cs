@@ -11,13 +11,13 @@ namespace Library.Models
     public class BookCopy
     {
         [ForeignKey("BookRef")]
-        public Book theBook { get; set; }
+        public Book TheBook { get; set; }
         [Key]
         public int Id { get; set; }
 
         public BookCopy(Book book)
         {
-            theBook = book;
+            TheBook = book;
             Id = new int();
         }
     }

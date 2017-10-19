@@ -13,11 +13,11 @@ namespace Library.Models
         [Key]
         public int Id { get; set; }
         [ForeignKey("BookCopyRef")]
-        public BookCopy theBook { get; set; }
+        public BookCopy TheBook { get; set; }
         [Required]
-        public bool onLoan { get; set; }
+        public bool OnLoan { get; set; }
         [ForeignKey("MemberRef")]
-        public Member theMember { get; set; }
+        public Member TheMember { get; set; }
         [Required]
         public DateTime DueDate { get; set; }
         [Required]
@@ -27,9 +27,9 @@ namespace Library.Models
 
         public Loan(BookCopy book, Member member, bool loanBool)
         {
-            theBook = book;
-            theMember = member;
-            onLoan = loanBool;
+            TheBook = book;
+            TheMember = member;
+            OnLoan = loanBool;
             DueDate = new DateTime();
             TimeOfLoan = new DateTime();
             TimeOfReturn = new DateTime();
