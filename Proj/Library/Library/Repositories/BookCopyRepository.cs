@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Repositories
 {
-    class BookCopyRepository : IRepository<BookCopy, int>
+    public class BookCopyRepository : IRepository<BookCopy, int>
     {
         LibraryContext _context;
 

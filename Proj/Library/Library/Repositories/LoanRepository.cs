@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Repositories
 {
-    class LoanRepository : IRepository<Loan, int>
+    public class LoanRepository : IRepository<Loan, int>
     {
         LibraryContext _context;
 
