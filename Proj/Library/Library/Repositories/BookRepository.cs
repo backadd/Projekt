@@ -30,13 +30,7 @@ namespace Library.Repositories {
 
         public Book Find(int id)
         {
-            var books = _context.Books.Where(b => b.Id == id).ToList();
-            if (books.Count > 0)
-            {
-                return books[0];
-            }
-            return null;
-
+            return _context.Books.Single(b => b.Id == id);
         }
 
         public void Remove(Book item)
