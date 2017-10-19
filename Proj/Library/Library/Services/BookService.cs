@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Library.Services {
-    class BookService
+    class BookService : IService
     {
         BookRepository _bookRepository;
 
@@ -15,6 +15,8 @@ namespace Library.Services {
         {
             _bookRepository = repoFactory.GetBookRepository();
         }
+
+        public event EventHandler Updated;
 
         public IEnumerable<Book> All()
         {
