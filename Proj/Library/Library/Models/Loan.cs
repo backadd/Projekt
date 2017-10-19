@@ -12,11 +12,11 @@ namespace Library.Models
     {
         [Key]
         public int Id { get; set; }
-        [ForeignKey("BookCopyRef")]
+        [ForeignKey("Id")]
         public BookCopy TheBook { get; set; }
         [Required]
         public bool OnLoan { get; set; }
-        [ForeignKey("MemberRef")]
+        [ForeignKey("Id")]
         public Member TheMember { get; set; }
         [Required]
         public DateTime DueDate { get; set; }

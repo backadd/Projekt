@@ -10,7 +10,7 @@ namespace Library.Models
 {
     public class BookCopy
     {
-        [ForeignKey("BookRef")]
+        [ForeignKey("Id")]
         public Book TheBook { get; set; }
         [Key]
         public int Id { get; set; }

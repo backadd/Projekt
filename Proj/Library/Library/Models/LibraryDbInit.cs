@@ -10,6 +10,9 @@ namespace Library.Models {
     /// Derived database strategy
     /// </summary>
     class LibraryDbInit : DropCreateDatabaseAlways<LibraryContext> {
+
+        public LibraryDbInit() : base() { }
+
         protected override void Seed(LibraryContext context) {
             base.Seed(context);
 

@@ -12,7 +12,7 @@ namespace Library.Models {
         public int Id { get; set; }
         [Required]
         public string Title { get; set; }
-        [ForeignKey("AuthorRef")]
+        [ForeignKey("Id")]
         public virtual Author Author { get; set; }
         [Required]
         public string ISBN { get; set; }
